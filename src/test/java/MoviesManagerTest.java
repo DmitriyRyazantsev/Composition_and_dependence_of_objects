@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class moviesManagerTest {
+public class MoviesManagerTest {
 
     @Test
     public void test() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
 
@@ -16,7 +16,7 @@ public class moviesManagerTest {
 
     @Test
     public void test1() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
         manager.addMovie("film 2");
@@ -31,7 +31,7 @@ public class moviesManagerTest {
 
     @Test
     public void test2() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
         manager.addMovie("film 2");
@@ -45,7 +45,7 @@ public class moviesManagerTest {
 
     @Test
     public void test3() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
         manager.addMovie("film 2");
@@ -59,7 +59,7 @@ public class moviesManagerTest {
 
     @Test
     public void test4() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
 
         String[] expected = {};
@@ -69,7 +69,7 @@ public class moviesManagerTest {
 
     @Test
     public void test5() {
-        movie_poster_manager manager = new movie_poster_manager();
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
         manager.addMovie("film 2");
@@ -79,6 +79,23 @@ public class moviesManagerTest {
 
 
         String[] expected = {"film 5", "film 4", "film 3", "film 2", "film 1"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    public void test6() {
+        MoviePosterManager manager = new MoviePosterManager();
+
+        manager.addMovie("film 1");
+        manager.addMovie("film 2");
+        manager.addMovie("film 4");
+        manager.addMovie("film 6");
+        manager.addMovie("film 7");
+
+
+
+        String[] expected = {"film 7", "film 6", "film 4", "film 2", "film 1"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
 

@@ -1,12 +1,12 @@
-public class movie_poster_manager {
+public class MoviePosterManager {
     private String[] movies = new String[0];
     private int limit;
 
-    public movie_poster_manager() {
+    public MoviePosterManager() {
         this.limit = 5;
     }
 
-    public movie_poster_manager(int limit) {
+    public MoviePosterManager(int limit) {
         this.limit = limit;
     }
 
