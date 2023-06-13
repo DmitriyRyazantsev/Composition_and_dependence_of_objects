@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class MoviesManagerTest {
 
     @Test
-    public void test() {
+    public void testMoviesManager1f() {
         MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
@@ -15,7 +15,7 @@ public class MoviesManagerTest {
     }
 
     @Test
-    public void test1() {
+    public void testMoviesManagerLimit() {
         MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
@@ -30,7 +30,7 @@ public class MoviesManagerTest {
     }
 
     @Test
-    public void test2() {
+    public void testMoviesManager3() {
         MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
@@ -44,21 +44,21 @@ public class MoviesManagerTest {
     }
 
     @Test
-    public void test3() {
+    public void testMoviesManager3f() {
         MoviePosterManager manager = new MoviePosterManager();
 
-        manager.addMovie("film 1");
-        manager.addMovie("film 2");
         manager.addMovie("film 3");
+        manager.addMovie("film 2");
+        manager.addMovie("film 1");
 
 
-        String[] expected = {"film 3", "film 2", "film 1"};
+        String[] expected = {"film 1", "film 2", "film 3"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void test4() {
+    public void testMoviesManagerNo() {
         MoviePosterManager manager = new MoviePosterManager();
 
 
@@ -68,7 +68,7 @@ public class MoviesManagerTest {
     }
 
     @Test
-    public void test5() {
+    public void testMoviesManager5f() {
         MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
@@ -84,7 +84,7 @@ public class MoviesManagerTest {
 
     }
     @Test
-    public void test6() {
+    public void testMoviesManagerMore() {
         MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie("film 1");
@@ -92,10 +92,11 @@ public class MoviesManagerTest {
         manager.addMovie("film 4");
         manager.addMovie("film 6");
         manager.addMovie("film 7");
+        manager.addMovie("film 8");
 
 
 
-        String[] expected = {"film 7", "film 6", "film 4", "film 2", "film 1"};
+        String[] expected = {"film 8", "film 7", "film 6", "film 4", "film 2"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
 
